@@ -39,7 +39,7 @@
                       </a>
                       <div>
                       <form method= "POST" action="{{ route('devs.destroy', $devicesItem)}}">
-                        @csrf @method('DELELTE')
+                        @csrf @method('DELETE')
                         <a class="btn btn-danger" type="submit" >
                             <i class="icon-trash icon-large"></i> Delete</a>
                       </a>
@@ -67,7 +67,4 @@
       </div>
       <!-- /.container-fluid -->
     </div>
-   
-    <mqtt-component></mqtt-component>
-    <subs-component topic='#'></subs-component>
 @endsection

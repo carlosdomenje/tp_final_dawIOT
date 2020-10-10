@@ -1,26 +1,29 @@
 <template>
   <div class="publish">
-    <button @click="publish1">Publish1 (Sub1 + Sub3)</button>
-    <button @click="publish2">Publish2 (Sub2 + Sub3)</button>
+    <button type="button" class="btn btn-dark" @click="on_led">ON LED</button>
+    <button type="button" class="btn btn-dark" @click="off_led">OFF LED</button>
   </div>
 
 </template>
 
 <script>
 export default {
+  props:[
+      'topic',
+  ],
   methods: {
-    publish1 () {
-      this.$mqtt.publish('VueMqtt/publish1', 'message to Sub1')
+    on_led () {
+      this.$mqtt.publish(this.topic, 'on')
     },
-    publish2 () {
-      this.$mqtt.publish('VueMqtt/publish2', 'message to Sub2')
+    off_led () {
+      this.$mqtt.publish(this.topic, 'off')
     }
   },
   mqtt: {
-    'VueMqtt/publish1' (data, topic) {
+    '/led' (data, topic) {
       console.log(topic + ': ' + String.fromCharCode.apply(null, data))
     },
-    'VueMqtt/publish2' (data, topic) {
+    '/led' (data, topic) {
       console.log(topic + ': ' + String.fromCharCode.apply(null, data))
     }
   }

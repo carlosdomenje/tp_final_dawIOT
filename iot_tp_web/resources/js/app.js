@@ -11,6 +11,7 @@ import MqttComponent from './components/MqttComponent.vue';
 import SubsComponent from './components/MqttSubscriber.vue';
 import LineCharts from './components/ChartComponent.vue';
 import GaugeChart from './components/GaugeComponent.vue';
+import StatusComponent from './components/StatusComponent.vue';
 
 window.Vue = require('vue');
 
@@ -36,6 +37,7 @@ Vue.component('mqtt-component', MqttComponent);
 Vue.component('subs-component', SubsComponent);
 Vue.component('line-chart', LineCharts);
 Vue.component('gauge-chart', GaugeChart);
+Vue.component('status-component', StatusComponent);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
