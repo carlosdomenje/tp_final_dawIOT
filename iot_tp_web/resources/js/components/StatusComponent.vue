@@ -34,6 +34,7 @@ export default {
     }
   },
   mounted () {
+    
     this.$mqtt.subscribe(this.topic)
   },
   components: {

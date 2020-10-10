@@ -1919,19 +1919,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     GChart: vue_google_charts__WEBPACK_IMPORTED_MODULE_0__["GChart"]
+  },
+  props: {
+    mac: {
+      type: String
+    }
   },
   data: function data() {
     return {
       // Array will be automatically processed with visualization.arrayToDataTable function
       chartData: [],
       chartOptions: {
+        resizeDebounce: "500",
+        title: "MEDICION REMOTA - HISTORICOS",
+        legend: {
+          position: "bottom"
+        },
+        width: "800",
+        height: "400",
+        curveType: "function",
         chart: {
-          title: "Company Performance",
-          subtitle: "Sales, Expenses, and Profit: 2014-2017"
+          legend: "left"
         }
       }
     };
@@ -1940,10 +1953,10 @@ __webpack_require__.r(__webpack_exports__);
     loadData: function loadData() {
       var _this = this;
 
-      axios.get('http://127.0.0.1:8000/api/measure').then(function (response) {
+      axios.get('http://127.0.0.1:8000/api/measure/' + this.mac).then(function (response) {
         var data = [["Fecha", "Temperatura"]];
         response.data.forEach(function (obj) {
-          var date = new Date(obj.timestamp);
+          var date = new Date(obj.timestamp).toLocaleDateString();
           var fil = [date, parseFloat(obj.value)];
           data.push(fil);
         });
@@ -1951,7 +1964,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  created: function created() {
+  mounted: function mounted() {
     this.loadData();
   }
 });

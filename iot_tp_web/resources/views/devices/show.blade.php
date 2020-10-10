@@ -30,15 +30,15 @@
               <div class="panel-body">
               <br>
               <br>
-
+</div>
+    <line-chart mac={{$device->mac}}></line-chart>
+<div>
 <div  style="height: 300px;
   width: 300px;" class="container">
   
   <gauge-chart topic='{{$device->mac}}/value'></gauge-chart>
   
-</div>
-    <line-chart></line-chart>
-<div>
+
 
 </div>
 
