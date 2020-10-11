@@ -2,46 +2,40 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header border-0">
-                    <h3 class="card-title">DISPOSITIVOS</h3>   
-                    
-                </div>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-striped table-valign-middle">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>MAC Address</th>     
-                        <th>Accion</th>                     
-                    </tr>
-                    </thead>
-                    <tbody>
-                    
-                    
-                                   
-                   
-                    
-                    
-                    
-                    </tbody>
-                    </table>
-                </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid">
+
+  <div class="jumbotron">
+  
+     <h1 class="display-4">CREAR NUEVO DISPOSITIVO</h1>
+    <br>
+    <hr class="my-2">
+    <br>
+    <p>Para crear un nuevo dispositivo complete los campos del formulario.</p>
+  </div>
+
+  
+  <form method="POST" action="{{ route('devs.index') }}">
+  @csrf
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Nombre</label>
+      <input type="text" class="form-control" id="inputEmail4" name="name">
     </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">ID Dispositivo</label>
+      <input type="text" class="form-control" id="inputPassword4" name="dev_id">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword5">MAC ID</label>
+      <input type="text" class="form-control" id="inputPassword5" name="mac">
+    </div>
+
+  </div>
+  
+  <button type="submit" class="btn btn-primary">CREAR</button>
+</form>
+
+
 </div>
-<form method="POST" action="{{ route('devs.index') }}">
-                            @csrf
-                         <input type="text" name="name">
-                         <input type="text" name="dev_id">
-                        <input type="text" name="mac">  
-                        <button type="submit" class="btn btn-primary">
-                                    CREAR
-                                </button>
-                        </form>   
+
 @endsection

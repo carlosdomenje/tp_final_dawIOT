@@ -1936,11 +1936,11 @@ __webpack_require__.r(__webpack_exports__);
       chartData: [],
       chartOptions: {
         resizeDebounce: "500",
-        title: "MEDICION REMOTA - HISTORICOS",
+        title: "DATOS HISTORICOS",
         legend: {
           position: "bottom"
         },
-        width: "800",
+        width: "900",
         height: "400",
         curveType: "function",
         chart: {
@@ -1956,7 +1956,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('http://127.0.0.1:8000/api/measure/' + this.mac).then(function (response) {
         var data = [["Fecha", "Temperatura"]];
         response.data.forEach(function (obj) {
-          var date = new Date(obj.timestamp).toLocaleDateString();
+          var date = new Date(obj.timestamp).toLocaleTimeString();
           var fil = [date, parseFloat(obj.value)];
           data.push(fil);
         });
@@ -1966,6 +1966,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.loadData();
+    setInterval(this.loadData, 10000);
   }
 });
 
@@ -2015,6 +2016,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_svg_gauge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-svg-gauge */ "./node_modules/vue-svg-gauge/dist/vue-svg-gauge.js");
 /* harmony import */ var vue_svg_gauge__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_svg_gauge__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
 //
 //
 //
@@ -37884,6 +37887,14 @@ var render = function() {
     "div",
     { attrs: { id: "app" } },
     [
+      _c("h4", { staticStyle: { "text-align": "left" } }, [
+        _vm._v(" VALOR EN TIEMPO REAL ")
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
       _c("VueSvgGauge", {
         attrs: {
           "start-angle": -110,
@@ -37903,7 +37914,7 @@ var render = function() {
       _c(
         "h1",
         { staticStyle: { "text-align": "center", "font-size": "500%" } },
-        [_vm._v(_vm._s(_vm.valor) + " % ")]
+        [_vm._v(_vm._s(_vm.valor) + " ºC ")]
       )
     ],
     1

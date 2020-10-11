@@ -28,9 +28,9 @@ export default {
       chartData: [],
       chartOptions: {
         resizeDebounce :"500",
-        title:"MEDICION REMOTA - HISTORICOS",
+        title:"DATOS HISTORICOS",
         legend:{position: "bottom"},
-        width:"800",
+        width:"900",
         height:"400",
         curveType: "function",
         chart: {
@@ -45,17 +45,20 @@ export default {
                       .then((response)=>{
                         var data = [["Fecha", "Temperatura"]];
                         response.data.forEach(obj => {
-                          var date = new Date(obj.timestamp).toLocaleDateString();
+                          var date = new Date(obj.timestamp).toLocaleTimeString();
                           var fil = [date, parseFloat(obj.value)];
                           data.push(fil);
                         });
                         this.chartData = data;
                       });
+          
       }
   },
   
   mounted() {
       this.loadData();
+      setInterval(this.loadData, 10000);
+                   
   }
 };
 </script>
