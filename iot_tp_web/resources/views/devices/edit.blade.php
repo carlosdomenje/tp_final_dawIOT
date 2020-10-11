@@ -2,7 +2,46 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
+
+  <div class="jumbotron">
+  
+     <h1 class="display-4">EDITAR {{$device->name}}</h1>
+    <br>
+    <hr class="my-2">
+    <br>
+    <p>Edite el campo que requiera actualizar.</p>
+  </div>
+
+  
+  <form method="POST" action="{{ route('devs.update', $device) }}">
+  @csrf @method('PUT')
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Nombre</label>
+      <input type="text" class="form-control" id="inputEmail4" name="name" value="{{$device->name}}">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">ID Dispositivo</label>
+      <input type="text" class="form-control" id="inputPassword4" name="dev_id" value="{{$device->dev_id}}">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword5">MAC ID</label>
+      <input type="text" class="form-control" id="inputPassword5" name="mac" value="{{$device->mac}}">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">CONFIRMAR EDICION</button>
+</form>
+
+
+</div>
+
+@endsection
+
+
+<!--
+
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -44,4 +83,4 @@
                                     CONFIRMAR EDICION
                                 </button>
                         </form>   
-@endsection
+-->

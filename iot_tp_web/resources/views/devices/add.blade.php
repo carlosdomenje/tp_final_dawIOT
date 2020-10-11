@@ -2,6 +2,35 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container-fluid">
+
+  <div class="jumbotron">
+  
+     <h1 class="display-4">CREAR NUEVO DISPOSITIVO</h1>
+    <br>
+    <hr class="my-2">
+    <br>
+    <p>Para crear un nuevo dispositivo complete los campos de la lista.</p>
+  </div>
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" >NOMBRE</th>
+        <th scope="col" >IDENTIFICADOR</th>
+        <th scope="col" >MAC ID</th>
+      </tr>
+    </thead>
+    <tbody>     
+      
+    </tbody>
+  </table>
+</div>
+
+@endsection
+
+
+<!--
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -43,5 +72,4 @@
                         <button type="submit" class="btn btn-primary">
                                     CREAR
                                 </button>
-                        </form>   
-@endsection
+                        </form>   -->

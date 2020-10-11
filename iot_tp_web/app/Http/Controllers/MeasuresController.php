@@ -13,8 +13,9 @@ class MeasuresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(String $id)
     {
+        
         $measures = Measure::select('timestamp', 'value')->get();
     
         return $measures;
@@ -27,8 +28,10 @@ class MeasuresController extends Controller
      * @param  \App\Measure  $serie
      * @return \Illuminate\Http\Response
      */
-    public function show(Measure $measure)
+    public function show(String $measure)
     {
-        return $measure;
+        $mac = $measure;
+        $measures = Measure::select('timestamp', 'value')->where('mac','=',$mac)->get();
+        return $measures;
     }
 }

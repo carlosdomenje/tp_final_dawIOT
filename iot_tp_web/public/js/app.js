@@ -1919,19 +1919,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     GChart: vue_google_charts__WEBPACK_IMPORTED_MODULE_0__["GChart"]
+  },
+  props: {
+    mac: {
+      type: String
+    }
   },
   data: function data() {
     return {
       // Array will be automatically processed with visualization.arrayToDataTable function
       chartData: [],
       chartOptions: {
+        resizeDebounce: "500",
+        title: "DATOS HISTORICOS",
+        legend: {
+          position: "bottom"
+        },
+        width: "900",
+        height: "400",
+        curveType: "function",
         chart: {
-          title: "Company Performance",
-          subtitle: "Sales, Expenses, and Profit: 2014-2017"
+          legend: "left"
         }
       }
     };
@@ -1940,10 +1953,10 @@ __webpack_require__.r(__webpack_exports__);
     loadData: function loadData() {
       var _this = this;
 
-      axios.get('http://127.0.0.1:8000/api/measure').then(function (response) {
+      axios.get('http://127.0.0.1:8000/api/measure/' + this.mac).then(function (response) {
         var data = [["Fecha", "Temperatura"]];
         response.data.forEach(function (obj) {
-          var date = new Date(obj.timestamp);
+          var date = new Date(obj.timestamp).toLocaleTimeString();
           var fil = [date, parseFloat(obj.value)];
           data.push(fil);
         });
@@ -1951,8 +1964,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  created: function created() {
+  mounted: function mounted() {
     this.loadData();
+    setInterval(this.loadData, 10000);
   }
 });
 
@@ -2002,6 +2016,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_svg_gauge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-svg-gauge */ "./node_modules/vue-svg-gauge/dist/vue-svg-gauge.js");
 /* harmony import */ var vue_svg_gauge__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_svg_gauge__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
 //
 //
 //
@@ -2130,7 +2146,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -37872,6 +37887,14 @@ var render = function() {
     "div",
     { attrs: { id: "app" } },
     [
+      _c("h4", { staticStyle: { "text-align": "left" } }, [
+        _vm._v(" VALOR EN TIEMPO REAL ")
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
       _c("VueSvgGauge", {
         attrs: {
           "start-angle": -110,
@@ -37891,7 +37914,7 @@ var render = function() {
       _c(
         "h1",
         { staticStyle: { "text-align": "center", "font-size": "500%" } },
-        [_vm._v(_vm._s(_vm.valor) + " % ")]
+        [_vm._v(_vm._s(_vm.valor) + " ºC ")]
       )
     ],
     1
@@ -37923,7 +37946,7 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "btn btn-dark",
+        staticClass: "btn btn-success",
         attrs: { type: "button" },
         on: { click: _vm.on_led }
       },
@@ -37933,7 +37956,7 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "btn btn-dark",
+        staticClass: "btn btn-danger",
         attrs: { type: "button" },
         on: { click: _vm.off_led }
       },
@@ -37991,11 +38014,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "app" } }, [
-    _c(
-      "span",
-      { class: _vm.status, staticStyle: { height: "25px", width: "90px" } },
-      [_vm._v("LED: " + _vm._s(_vm.status_led))]
-    )
+    _c("h3", [
+      _c("span", { class: _vm.status }, [_vm._v(_vm._s(_vm.status_led))])
+    ])
   ])
 }
 var staticRenderFns = []

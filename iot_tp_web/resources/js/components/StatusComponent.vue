@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <span style="height: 25px;
-  width: 90px;" v-bind:class="status">LED: {{status_led}}</span>
+    <h3><span v-bind:class="status">{{status_led}}</span></h3>
   </div>
   
 </template>
@@ -34,6 +33,7 @@ export default {
     }
   },
   mounted () {
+    
     this.$mqtt.subscribe(this.topic)
   },
   components: {

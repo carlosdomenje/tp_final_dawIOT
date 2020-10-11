@@ -17041,3 +17041,26 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.table {
+  display: table;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.table-row:nth-child(even) {
+  background: lightblue;
+}
+

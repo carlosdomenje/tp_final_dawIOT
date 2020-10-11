@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    
+    <h4 style="text-align:left"> VALOR EN TIEMPO REAL </h4>
+    <br>
+    <br>
     <VueSvgGauge
     :start-angle="-110"
     :end-angle="110"
@@ -12,7 +14,7 @@
     :scale-interval="5"
     />
     
-    <h1 style="text-align:center; font-size:500%">{{valor}} % </h1> 
+    <h1 style="text-align:center; font-size:500%">{{valor}} ºC </h1> 
   </div>
   
 </template>
