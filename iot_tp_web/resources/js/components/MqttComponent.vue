@@ -1,7 +1,7 @@
 <template>
   <div class="publish">
-    <button type="button" class="btn btn-dark" @click="on_led">ON LED</button>
-    <button type="button" class="btn btn-dark" @click="off_led">OFF LED</button>
+    <button type="button" class="btn btn-success" @click="on_led">ON LED</button>
+    <button type="button" class="btn btn-danger" @click="off_led">OFF LED</button>
   </div>
 
 </template>

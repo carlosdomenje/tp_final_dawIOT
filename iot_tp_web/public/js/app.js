@@ -2150,7 +2150,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37936,7 +37935,7 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "btn btn-dark",
+        staticClass: "btn btn-success",
         attrs: { type: "button" },
         on: { click: _vm.on_led }
       },
@@ -37946,7 +37945,7 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "btn btn-dark",
+        staticClass: "btn btn-danger",
         attrs: { type: "button" },
         on: { click: _vm.off_led }
       },
@@ -38004,11 +38003,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "app" } }, [
-    _c(
-      "span",
-      { class: _vm.status, staticStyle: { height: "25px", width: "90px" } },
-      [_vm._v("LED: " + _vm._s(_vm.status_led))]
-    )
+    _c("h3", [
+      _c("span", { class: _vm.status }, [_vm._v(_vm._s(_vm.status_led))])
+    ])
   ])
 }
 var staticRenderFns = []
