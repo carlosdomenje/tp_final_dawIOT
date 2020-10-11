@@ -18,9 +18,10 @@ Mira **Despliegue** para conocer como desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
-
+[NodeJs](https://nodejs.org/es/download/) Para la realizacion del cliente MQTT que aloja los datos en MySQL.
 [Npm](https://docs.npmjs.com/cli/install) Para realizar la instalacion de paquetes utilizacion por la aplicacion.
-
+[Laravel](https://laravel.com/docs/8.x/installation) Para realizar el backend de la aplicacion.
+[Vue](https://es.vuejs.org/v2/guide/installation.html) Para realizar el frontend de la aplicacion.
 
 
 Guia de instalacion en Ubuntu 18,17,16 y 14
@@ -39,7 +40,11 @@ git clone https://github.com/carlosdomenje/tp_final_dawIOT.git
 Para realizar el despliegue de la aplicacion primero debera ingresar a la carpeta del proyecto:
 
 ```
-cd 
+cd tp_final_dawIOT
+```
+Primero ingresar a la carpeta 
+```
+cd iot_tp_web
 ```
 Abrir una terminal y ejecutar:
 
@@ -49,14 +54,13 @@ npm install
 
 php artisan serve
 ```
-Abrir otra Terminal, dirigirse a la carpeta , instalar dependencias necesarias y ejecutar el comando de  para ejecutar la aplicacion.
+Abrir otra Terminal, dirigirse a la carpeta node_app_mqtt_client, instalar dependencias necesarias y ejecutar el comando de nodemon para ejecutar la aplicacion.
 
 ```
-cd 
-
+nodemon index.js
 
 ```
-Espere a que se abra el navegador web con la aplicacion o bien abra una pestaña e ingrese:
+Abrir el navegador web e ingresar la siguiente URL:
 
 ```
 http://localhost:8000
@@ -65,7 +69,10 @@ http://localhost:8000
 
 ## Captura de la aplicacion 📳️
 
-
+![page_1](img_app/page_1.png)
+![page_2](img_app/page_2.png)
+![page_3](img_app/page_3.png)
+![page_4](img_app/page_4.png)
 
 ## Herramientas utilizadas 🛠️
 
@@ -88,8 +95,4 @@ Se utiliza [Git](https://git-scm.com/) para el versionado.
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia GPL.
-
-
-
----
 
