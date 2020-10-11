@@ -65,7 +65,10 @@ http://localhost:8000
 
 ## Captura de la aplicacion 📳️
 
-
+![page_1](img_app/page_1.png)
+![page_2](img_app/page_2.png)
+![page_3](img_app/page_3.png)
+![page_4](img_app/page_4.png)
 
 ## Herramientas utilizadas 🛠️
 
@@ -88,8 +91,4 @@ Se utiliza [Git](https://git-scm.com/) para el versionado.
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia GPL.
-
-
-
----
 
