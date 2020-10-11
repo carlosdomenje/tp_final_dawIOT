@@ -25,12 +25,12 @@
            
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             <div class=" max-w-6xl mx-auto sm:px-8 lg:px-4">
-                <div class="container">
+                
                     <div class="jumbotron">
-                        <h1>IoT - TP Final - DAW3</h1>
-                        <p>Trabajo Practico Final de Diseño aplicaciones web 3.</p>
+                        <h1>TP Final - DAW-IoT</h1>
+                        <p>Trabajo Practico Final de Diseño Aplicaciones Web IoT.</p>
                     </div>                  
-                </div>
+                
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
@@ -75,7 +75,7 @@
                     <div class="text-center text-sm text-gray-500 sm:text-left">
                     
                         <div class="flex items-center">
-                            <a href="https://github.com/carlosdomenje" class="ml-2 underline text-lg leading-7 font-semibold">
+                            <a href="https://github.com/carlosdomenje/tp_final_dawIOT" class="ml-2 underline text-lg leading-7 font-semibold">
                             <i class="fas fa-code-branch fa-x"></i> Domenje Carlos - GITHUB
                             </a>
                            
